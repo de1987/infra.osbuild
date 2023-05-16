@@ -1,8 +1,6 @@
 name: notify
 on:
   push:
-    branches:
-      - 'main'
 
 jobs:
   send-message:
