@@ -1,0 +1,21 @@
+name: notify
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    name: Send message via Matrix
+    environment: notify
+    steps:
+
+      - name: send message
+        uses: s3krit/matrix-message-action@v0.0.3
+        with:
+          room_id: '!cFMNxIxBDTsVxYDMmd:matrix.org'  # test
+          access_token: ${{ secrets.MATRIX_TOKEN }}
+          message: >
+            Testing
+          server: matrix.org
